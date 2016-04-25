@@ -1,11 +1,13 @@
 # Syncing up with Drupal 8 and Browsersync
 
-Manually refreshing your page and  clearing the cache, aka`drush cr`, are two things that will slow your Drupal development time. What if your browser reloaded automatically after changes, and across multiple devices and browsers you have open? This is where Browsersync comes in. Browsersync is module for Node.js that allows you to sync your changes across browsers and devices.
+Drupal 8 theme can be irksome with cache-rebuilding and browswer refreshing, especially with responsive design. Wouldn't it be great if you could just open your site on 3 different devices and have them update live as you edit your theme? 
+
+Let me introduce you to Browsersync. Browsersync is a module for Node.js that allows you to sync your changes across browsers and devices.
 
 ## Preparing Drupal
 This article assumes you have a working install of Drupal 8 and a theme in place. If you don’t, check out Joe Komenda’s post, [Up and Theming with Drupal 8](https://thinkshout.com/blog/2015/11/up-and-theming-with-drupal-8/). This will get you going.
 
-Once you have D8 installed you’ll need to turn off caching. Rename `sites/example.settings.local.php` to `sites/example.settings.local.php`.  You can rename the files from your editor of choice, if you prefer, or run the following command from your site root :
+Once you have D8 installed you’ll need to turn off caching. Rename `sites/example.settings.local.php` to `sites/example.settings.local.php`.  You can rename the files with editor of choice, if you prefer, or run the following command from your site root :
 
 ~~~ shell
 $ cp sites/example.settings.local.php sites/default/settings.local.php
