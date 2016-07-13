@@ -8,7 +8,7 @@ TypeScript is open source and maintained by Microsoft. Anders Hejlsberg, an arch
 ## Installation
 Installing Typescript is effortless with NodeJs and NPM.
 
-```javascsript
+```typescript
 npm install -g typescript`
 ```
 
@@ -17,7 +17,7 @@ Verify your installation with `tsc -v`.  This will print the TypeScript version 
 ## File names / Compiling
 TypeScript files end in `.ts`. They are compiled to `.js` files.  Let’s try out your in installation. Create a folder called `hero_game`. Then inside that folder add a file called `hero.ts`.  Inside that file create an add function.
 
-```javascript
+```typescript
 function jump(character, height) {
 	return character + ‘ jumped ‘ + height + ‘ high.’;
 }
@@ -55,7 +55,7 @@ TypeScript adds typing to JavaScript which is an untyped language.  As it stands
 
 Let’s change our function to check for the types we want. 
 
-```javascript
+```typescript
 function jump(character: string, height: number) {
 	return character + ‘ jumped ‘ + height + ‘ high.’;
 }
@@ -76,7 +76,7 @@ TypeScript has the same basic types as JavaScript. Additionally, it has `enum`, 
 ## A Heroic Example
 Let’s expand our hero example a bit more. Let’s define a character _interface_ and pass that into our function.  We’ll create an TypeScript interface and update our function signature to take that interface instead of just a string.
 
-```javascript
+```typescript
 interface Character {
 	name: string;
 	title: string;
@@ -96,7 +96,7 @@ In the above example the `interface Character` describes the object we want to r
 ## Adding a Touch of Class
 JavaScript is functional language, but ES2015 offers an object oriented approach. TypeScript lets us take advantage of those features now.  Let’s get a little classy with our hero. Update your `hero.ts` file with the following code:
 
-```javascript
+```typescript
 class Hero {
 	name: string;
 	title: string;
