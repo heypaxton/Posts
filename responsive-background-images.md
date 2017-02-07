@@ -40,7 +40,7 @@ Add some images styles to your site to use with your breakpoints. Visit `admin/c
 
 These image styles can now be used in a responsive way. Go to `admin/config/media/responsive-image-style` and add a responsive image style called "Hero Image." Set the breakpoint group to your theme name or to ThinkBase, if you are using that one. For each of our breakpoints use the option "Select a single image style." For large use "Hero Large", for medium use "Hero Medium and for small use "Hero Small." We can just use the original image for the fallback image.
 
-The last thing we want to do is configure our content type to use the responsive image style we've created. D8 has a default content type "Article" that already has an image field. Go to `admin/structure/types/manage/article/display` and change the image format to to Responsive Image. Click the gear to set the responsive image style to "Hero image."
+The last thing we want to do is configure our content type to use the responsive image style we've created. D8 has a default content type "Article" that already has an image field. Go to `admin/structure/types/manage/article/display` and change the image format to to Responsive Image. Click the gear to set the responsive image style to "Hero image." Click save. Let's go create some content.
 
 ## Adding an image to our content
-
+Create an article and add an image that's large enough to match your image styles. 
