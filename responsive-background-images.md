@@ -38,5 +38,7 @@ thinkbase.large:
 ## Responsive Image Styles
 Add some images styles to your site to use with your breakpoints. Visit `admin/config/media/image-styles` to add some. We can add three that match our breakpoints. I've added 3 images styles: Hero Large, Hero Medium and Hero Small. They all use scale and crop. The ratio I've chosen is arbitray. Just make each one smaller than the next. 
 
+These image styles can now be used in a responsive way. Go to `admin/config/media/responsive-image-style` and add a responsive image style called "Hero Image." Set the breakpoint group to your theme name or to ThinkBase, if you are using that one. For each of our breakpoints use the option "Select a single image style." For large use "Hero Large", for medium use "Hero Medium and for small use "Hero Small." We can just use the original image for the fallback image.
+
 
 
