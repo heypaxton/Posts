@@ -35,3 +35,8 @@ thinkbase.large:
     - 2x
 ```
 
+## Responsive Image Styles
+Add some images styles to your site to use with your breakpoints. Visit `admin/config/media/image-styles` to add some. We can add three that match our breakpoints. I've added 3 images styles: Hero Large, Hero Medium and Hero Small. They all use scale and crop. The ratio I've chosen is arbitray. Just make each one smaller than the next. 
+
+
+
