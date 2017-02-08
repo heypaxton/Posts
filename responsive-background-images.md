@@ -47,6 +47,13 @@ Create an article and add an image that's large enough to match your image style
 
 {% raw %}
 ```html
-<img property="schema:image" srcset="/bgimages/sites/default/files/styles/hero_small/public/2017-02/website-banner.jpg?itok=ZcbQ_c3m 560w, /bgimages/sites/default/files/styles/hero_medium/public/2017-02/website-banner.jpg?itok=2dVFs4nr 850w, /bgimages/sites/default/files/styles/hero_large/public/2017-02/website-banner.jpg?itok=Lxg2YkB6 1280w" sizes="100vw" src="/bgimages/sites/default/files/2017-02/website-banner.jpg" alt="Responsive Background Image" typeof="foaf:Image">
+<img property="schema:image" 
+     srcset="/bgimages/sites/default/files/styles/hero_small/public/2017-02/website-banner.jpg?itok=ZcbQ_c3m 560w, 
+             /bgimages/sites/default/files/styles/hero_medium/public/2017-02/website-banner.jpg?itok=2dVFs4nr 850w, 
+             /bgimages/sites/default/files/styles/hero_large/public/2017-02/website-banner.jpg?itok=Lxg2YkB6 1280w" 
+     sizes="100vw" 
+     src="/bgimages/sites/default/files/2017-02/website-banner.jpg" 
+     alt="Responsive Background Image" 
+     typeof="foaf:Image">
 ```
 {% endraw %}
