@@ -43,7 +43,7 @@ These image styles can now be used in a responsive way. Go to `admin/config/medi
 The last thing we want to do is configure our content type to use the responsive image style we've created. D8 has a default content type "Article" that already has an image field. Go to `admin/structure/types/manage/article/display` and change the image format to to Responsive Image. Click the gear to set the responsive image style to "Hero image." Click save. Let's go create some content.
 
 ## Adding an image to our content
-Create an article and add an image that's large enough to match your image styles. When you visit your article page your image should be on the page now. When you resize your browser you will see the image size change. Drupal 8 uses the picture tag to render this image.
+Create an article and add an image that's large enough to match your image styles. When you visit your article page your image should be on the page now. When you resize your browser you will see the image size change. If you inspect your markup you will see it's rendered as an `<img>` tag with a `srcset` attribute. 
 
 {% raw %}
 ```html
@@ -54,6 +54,37 @@ Create an article and add an image that's large enough to match your image style
      sizes="100vw" 
      src="/bgimages/sites/default/files/2017-02/website-banner.jpg" 
      alt="Responsive Background Image" 
-     typeof="foaf:Image">
+     typeof="foaf:Image"
+>
 ```
 {% endraw %}
+
+## Inline to background 
+We have a responsive image! Let's celebrate? Not quite yet. We still need this to serve as a background image. You could do this at the block or node level, but for the sake of this post we are going to use the field template. 
+
+Add a file called `field--node--field-image--article.html.twig` to the templates folder in your theme. Copy the contents of `core/themes/classy/templates/field/field.html.twig` from from the Classy theme in core. Update the markup as follows:
+
+```twig
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    'responsive-bg-image',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+
+{% for item in items %}
+  <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+{% endfor %}
+```
+
+I've added a class called "responsive-background-image" to the field to use later. 
