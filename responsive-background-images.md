@@ -1,4 +1,4 @@
-Responsive background images are easy if you can control theme in your Drupal 8 theme. Once they need to be managed by a content editor it adds some difficulty. You can absolutely position and adjust the z-index of inline images but that's no fun for responsive implementations. 
+Responsive background images are easy if you can just add them to your Drupal 8 theme. Once they need to be managed by a content editor it adds some difficulty. You can absolutely position and adjust the z-index of inline images but that's no fun for responsive implementations. 
 
 ## Setup
 
@@ -38,9 +38,15 @@ thinkbase.large:
 ## Responsive Image Styles
 Add some images styles to your site to use with your breakpoints. Visit `admin/config/media/image-styles` to add some. We can add three that match our breakpoints. I've added 3 images styles: Hero Large, Hero Medium and Hero Small. They all use scale and crop. The ratio I've chosen is arbitray. Just make each one smaller than the next. 
 
-These image styles can now be used in a responsive way. Go to `admin/config/media/responsive-image-style` and add a responsive image style called "Hero Image." Set the breakpoint group to your theme name or to ThinkBase, if you are using that one. For each of our breakpoints use the option "Select a single image style." For large use "Hero Large", for medium use "Hero Medium and for small use "Hero Small." We can just use the original image for the fallback image.
+These image styles can now be used in a responsive way. Go to `admin/config/media/responsive-image-style` and add a responsive image style called "Hero Image." Set the breakpoint group to your "Responsive Image." If you select your theme and select a size for each breakpoint, Drupal will use the `<picture>` instead of using `<img>` tag with a `srcset` attribute. We want the latter. Choose the option "select multiple image styles and use the sizes attribute." Select your three images sizes you created. We can just use the original image for the fallback image for now.
 
 The last thing we want to do is configure our content type to use the responsive image style we've created. D8 has a default content type "Article" that already has an image field. Go to `admin/structure/types/manage/article/display` and change the image format to to Responsive Image. Click the gear to set the responsive image style to "Hero image." Click save. Let's go create some content.
 
 ## Adding an image to our content
-Create an article and add an image that's large enough to match your image styles. 
+Create an article and add an image that's large enough to match your image styles. When you visit your article page your image should be on the page now. When you resize your browser you will see the image size change. Drupal 8 uses the picture tag to render this image.
+
+{% raw %}
+```html
+<img property="schema:image" srcset="/bgimages/sites/default/files/styles/hero_small/public/2017-02/website-banner.jpg?itok=ZcbQ_c3m 560w, /bgimages/sites/default/files/styles/hero_medium/public/2017-02/website-banner.jpg?itok=2dVFs4nr 850w, /bgimages/sites/default/files/styles/hero_large/public/2017-02/website-banner.jpg?itok=Lxg2YkB6 1280w" sizes="100vw" src="/bgimages/sites/default/files/2017-02/website-banner.jpg" alt="Responsive Background Image" typeof="foaf:Image">
+```
+{% endraw %}
