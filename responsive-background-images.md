@@ -87,4 +87,8 @@ Add a file called `field--node--field-image--article.html.twig` to the templates
 {% endfor %}
 ```
 
-I've added a class called `responsive-background-image` to the field to use later. 
+I've added a class called `responsive-bg-image` to the field to use later. Now let's make magic. We'll use JS to leverage the image sizes in our media query. 
+
+```js
+
+```
